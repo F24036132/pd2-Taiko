@@ -1,0 +1,13 @@
+<RCC>
+    <qresource prefix="/bgm">
+        <file>bgm/dong.wav</file>
+        <file>bgm/ka.wav</file>
+        <file>bgm/glass-clink-2.wav</file>
+        <file>bgm/applause.wav</file>
+        <file>bgm/SPYAIR_-_[1_mp3cut_net_mp3.wav</file>
+        <file>bgm/_-_[1_mp3cut_net_mp3 (2).wav</file>
+        <file>bgm/_-_[1_mp3cut_net_mp3 (1).wav</file>
+        <file>bgm/_-_[1_mp3cut_net_mp3.wav</file>
+        <file>bgm/_Go_to_Heart_Edge_cv_[1_mp.wav</file>
+    </qresource>
+</RCC>
