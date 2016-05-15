@@ -75,7 +75,9 @@ private:
     int xR,xR2,xR3,xB,xB2,xB3, y=148;
     QTimer *pointTimer;
     QLabel *score;
+    QLabel *highestScore;
     int success=0;
+    int highest=0;
     QLabel *taikoK;
     QTimer *taikokunTimer;
     int change;

@@ -81,5 +81,6 @@
         <file>images/mob.png</file>
         <file>images/gin.png</file>
         <file>images/score_bg.jpg</file>
+        <file>images/resultmark_newrecord.png</file>
     </qresource>
 </RCC>

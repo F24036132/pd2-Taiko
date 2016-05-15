@@ -12,6 +12,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->centralWidget->setObjectName("background");
     ui->centralWidget->setStyleSheet("#background{border-image:url(:/img/images/front2.jpg);}");
     ui->scoreDec->hide();
+    ui->highestImg->hide();
 //設定開始與離開按鈕
     start = new QPushButton(this);
     start->setText("START");
@@ -50,6 +51,8 @@ void MainWindow::backToStart()
     replay->hide();
     back->hide();
     ui->scoreDec->hide();
+    ui->highestImg->hide();
+    delete highestScore;
     delete score;
     delete finalScoreTimer;
     success=0;
@@ -78,6 +81,8 @@ void MainWindow::backToGamePage()
 {
     replay->hide();
     ui->scoreDec->hide();
+    ui->highestImg->hide();
+    delete highestScore;
     delete score;
     delete finalScoreTimer;
     success=0;
@@ -344,6 +349,14 @@ void MainWindow::showScore()
     score->setStyleSheet("color:white");
     score->setAlignment(Qt::AlignCenter);
 
+    highestScore = new QLabel(this);
+    highestScore->setGeometry(550,160,100,80);
+    highestScore->setFont(QFont("Hobo Std",28));
+    highestScore->setStyleSheet("color:black");
+    highestScore->setAlignment(Qt::AlignCenter);
+    highestScore->setText(QString::number(highest));
+    highestScore->show();
+
     finalScoreTimer = new QTimer(this);
     connect(finalScoreTimer,SIGNAL(timeout()),this,SLOT(scoreCount()));
     finalScoreTimer->start(0.01);
@@ -381,6 +394,11 @@ void MainWindow::scoreCount()
     score->setText(QString::number(i));
     i+=100;
     if(i>success) {
+        if(success>highest){
+            ui->highestImg->show();
+            highest=success;
+            highestScore->setText(QString::number(highest));
+        }
         i=0;
         QSound::play(":/bgm/bgm/applause.wav");
         finalScoreTimer->stop();
